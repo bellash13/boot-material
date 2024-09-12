@@ -1,0 +1,40 @@
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+
+    .app-header {
+        flex-shrink: 0;
+        height: $header-height;
+    }
+
+    .app-main {
+        display: flex;
+        flex-grow: 1;
+
+        .app-sidebar {
+            flex-shrink: 0;
+            width: $sidebar-width;
+            background-color: $gray-400;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        .app-main-content {
+            display: flex;
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background-color: $black;
+            color:$white;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+    }
+
+    .app-footer {
+        height: $footer-height;
+        background-color: $light;
+    }
+}
