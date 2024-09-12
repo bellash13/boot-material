@@ -1,0 +1,5 @@
+@import "app/variables";
+.app-sidebar{
+    width: $sidebar-width;
+    height: calc(100% - $footer-height - $header-height)
+}

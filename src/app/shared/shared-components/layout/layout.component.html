@@ -1,1 +1,18 @@
-<p>layout works!</p>
+<div class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <app-head class="flex-shrink-0"></app-head>
+
+    <!-- Main Content (Sidebar + Main Content) -->
+    <div class="d-flex flex-grow-1">
+        <!-- Sidebar -->
+        <app-sidebar class="flex-shrink-0 bg-light"></app-sidebar>
+
+        <!-- Main Content -->
+        <div class="main-content flex-grow-1 p-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer class="flex-shrink-0"></app-footer>
+</div>

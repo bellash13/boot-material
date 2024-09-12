@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { FooterComponent } from './footer/footer.component';
     HeadComponent,
     FooterComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [LayoutComponent, SidebarComponent, HeadComponent, FooterComponent],
 })
 export class SharedComponentsModule {}

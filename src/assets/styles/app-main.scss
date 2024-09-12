@@ -1,0 +1,134 @@
+
+@use '@angular/material' as mat;
+
+@import "app/functions";
+@import "app/variables";
+
+// Defining custom color variables
+@import "custom-colors";
+
+
+@import "app/mixins";
+@import "app/maps";
+@import "app/utilities";
+
+
+
+// customization
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Custom typography
+$font-family-sans-serif: Roboto, "Helvetica Neue", sans-serif;
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$line-height-base: 1.5;
+
+$spacer: 1.5rem;
+$border-radius: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-sm: 0.125rem;
+
+// Button styles
+$btn-border-radius: $border-radius-lg;
+$btn-font-weight: 600;
+
+// Layout & component imports for Bootstrap
+@import "app/root";
+@import "app/reboot";
+@import "app/type";
+@import "app/images";
+@import "app/containers";
+@import "app/grid";
+@import "app/tables";
+@import "app/forms";
+@import "app/buttons";
+@import "app/transitions";
+@import "app/dropdown";
+@import "app/button-group";
+@import "app/nav";
+@import "app/navbar";
+@import "app/card";
+@import "app/accordion";
+@import "app/breadcrumb";
+@import "app/pagination";
+@import "app/badge";
+@import "app/alert";
+@import "app/progress";
+@import "app/list-group";
+@import "app/close";
+@import "app/toasts";
+@import "app/modal";
+@import "app/tooltip";
+@import "app/popover";
+@import "app/carousel";
+@import "app/spinners";
+@import "app/offcanvas";
+@import "app/placeholders";
+
+
+
+$mat-primary: mat.define-palette(mat.$indigo-palette);
+$accent-color: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$warn-color: mat.define-palette(mat.$red-palette);
+
+// Define custom Angular Material typography
+$custom-typography: mat.define-typography-config($font-family: $font-family-sans-serif);
+// Global Angular Material theme
+$custom-theme: mat.define-light-theme((color: (primary: $mat-primary,
+        accent: $accent-color,
+        warn: $warn-color,
+      ),
+      typography: $custom-typography,
+      density: 0,
+    ));
+@include mat.all-component-themes($custom-theme);
+
+// Map for colors and corresponding class suffixes
+$theme-colors: (
+  "primary": $custom-primary,
+  "success": $custom-success,
+  "info": $custom-info,
+  "warning": $custom-warning,
+  "danger": $custom-danger,
+  "secondary": $custom-secondary,
+  "light": $custom-light,
+  "dark": $custom-dark
+);
+
+// Generate classes for Angular Material components
+@each $name, $color in $theme-colors {
+  .mat-button-#{$name} {
+    font-family: $font-family-sans-serif;
+  }
+
+  .mat-card-#{$name} {
+    font-family: $font-family-sans-serif;
+  }
+
+  .mat-toolbar-#{$name} {
+    font-family: $font-family-sans-serif;
+  }
+
+  .mat-icon-button-#{$name} {
+    font-family: $font-family-sans-serif;
+  }
+}
+
+// Helpers and utilities
+@import "app/helpers";
+@import "app/utilities/api";
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "header";
+@import "sidebar";
+@import "main";
+@import "footer";
